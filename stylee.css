@@ -1,0 +1,248 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0f0f1c;
+  color: #e0e0e0;
+  line-height: 1.7;
+  padding: 20px;
+}
+
+/* Container */
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1a0a24;
+  padding: 15px 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #e91e63aa;
+  margin-bottom: 40px;
+  color: #e91e63;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.8em;
+  letter-spacing: 2px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links li a {
+  color: #e91e63;
+  text-decoration: none;
+  font-size: 1.1em;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #ff77a9;
+}
+
+/* Hamburger menu - hidden on desktop */
+.menu-toggle {
+  display: none;
+  font-size: 2.2em;
+  cursor: pointer;
+  color: #e91e63;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    top: 60px;
+    right: -100%;
+    height: 100vh;
+    width: 200px;
+    background-color: #1a0a24;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+    gap: 30px;
+    transition: right 0.3s ease-in-out;
+    border-radius: 12px 0 0 12px;
+    box-shadow: -5px 0 15px #e91e63bb;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 40px;
+  animation: fadeInDown 1s ease-in-out;
+}
+
+.profile-img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #e91e63;
+  box-shadow: 0 0 20px rgba(233, 30, 99, 0.6);
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 2.4em;
+  color: #e91e63;
+  letter-spacing: 1.5px;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #ff77a9;
+  margin: 10px 0;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 25px;
+  background-color: #e91e63;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 15px rgba(233, 30, 99, 0.4);
+}
+
+.btn:hover {
+  background-color: #ff77a9;
+  box-shadow: 0 6px 20px rgba(255, 119, 169, 0.6);
+}
+
+/* Cards */
+.card {
+  background-color: #1c1c2b;
+  padding: 30px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 0 15px rgba(233, 30, 99, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-7px);
+}
+
+h2 {
+  color: #e91e63;
+  margin-bottom: 20px;
+  font-size: 26px;
+  letter-spacing: 1px;
+}
+
+/* Skills List */
+.skills-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 18px;
+  list-style: none;
+}
+
+.skills-list li {
+  background-color: #2d2d3d;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  color: #fff;
+  user-select: none;
+  box-shadow: 0 0 8px #e91e63aa;
+  overflow: hidden;
+}
+
+.skills-list li:hover,
+.skills-list li.active {
+  background-color: #e91e63;
+  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 0 18px #ff77a9cc;
+}
+
+.skills-list li span {
+  display: block;
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  font-size: 14px;
+  color: #999;
+  margin-top: 60px;
+}
+
+/* Animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive font size for headings */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.8em;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  .skills-list {
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  }
+}
